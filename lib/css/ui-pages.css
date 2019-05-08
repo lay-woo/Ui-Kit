@@ -1,0 +1,8 @@
+@charset "utf-8"; 
+
+.jokes{height:100%;}
+.jokes .sd{}
+.jokes .joke{background:white;padding:30px;margin:20px;font-size:1.4em;line-height:2.4em;height:100%;overflow-y:auto;}
+.jokes .joke:before{content:'';display:inline-block;vertical-align:baseline;margin-right:20px;width:40px;height:40px;background-position:center center;background-repeat:no-repeat;background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><path d="M16.18,22.89v14.5H2.79V25.94q0-9.29,2.22-13.46a18.66,18.66,0,0,1,9.23-8.39l3.05,4.86a11.17,11.17,0,0,0-5.62,4.75q-1.8,3.16-2,9.19Zm21.5,0v14.5H24.3V25.94q0-9.29,2.22-13.46a18.66,18.66,0,0,1,9.23-8.39l3.05,4.86a11.17,11.17,0,0,0-5.62,4.75q-1.8,3.16-2,9.19Z"/></svg>')}
+.jokes .joke:after{content:'';display:inline-block;vertical-align:top;margin-left:20px;width:40px;height:40px;background-position:center center;background-repeat:no-repeat;background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><path d="M2.88,18.41V3.91H16.26V15.36q0,9.3-2.15,13.39a18.93,18.93,0,0,1-9.29,8.46L1.77,32.28a10.84,10.84,0,0,0,5.58-4.82,20.22,20.22,0,0,0,2-9.05Zm21.5,0V3.91H37.77V15.36q0,9.3-2.15,13.39a18.93,18.93,0,0,1-9.29,8.46l-3.05-4.93a10.84,10.84,0,0,0,5.58-4.82,20.22,20.22,0,0,0,2-9.05Z"/></svg>')}
+.jokes .joke img{max-width:100%;}

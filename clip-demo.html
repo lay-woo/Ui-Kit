@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script src="./assets/js/jquery.js"></script>
+<style>
+
+		.bb, .bb::before, .bb::after {
+		  box-sizing: border-box;
+		  position: absolute;
+		  top: 0;
+		  bottom: 0;
+		  left: 0;
+		  right: 0;
+		}
+
+
+		.bb {
+		  width: 60%;
+		  height: 200px;
+		  margin: auto;
+		}
+
+		.bb::before, .bb::after {
+		  content: '';
+		  z-index: -1;
+		  margin:0!important;padding:0!important;
+		  border:2px solid #ffdf01;
+		  animation: clipMe 8s linear infinite;
+		  -webkit-animation: clipMe 8s linear infinite;
+		}
+
+		.bb::before {
+		  animation-delay: -4s;
+		  -webkit-animation-delay: -4s;
+		}
+
+		@-webkit-keyframes clipMe{
+			0%,100%{clip:rect(0px, 444px, 2px, 0px);}
+			25%{clip:rect(0px, 2px, 200px, 0px);}
+			50%{clip:rect(198px, 444px, 444px, 0px);}
+			75%{clip:rect(0px, 444px, 200px, 442px);}
+		}
+
+</style>
+<script type="text/javascript">
+		// var se=document.getElementById('clipMe');
+		// function setClip(e){
+		// 	var w=e.offsetWidth,h=e.offsetHeight,se=document.getElementById('clipMe');
+		// 	var ss='<style id="clipMe"> @keyframes clipMe{0%,100%{clip: rect(0px, '+w+'px, 2px, 0px);}\
+		// 		25%{clip: rect(0px, 2px, '+h+'px, 0px);}\
+		// 		50%{clip: rect('+(h-2)+'px, '+w+'px, '+w+'px, 0px);}\
+		// 		75%{clip: rect(0px, '+w+'px, '+h+'px, '+(w-2)+'px);}}</style>';
+
+		// 		$(se).remove();
+		// 		$(document.head).append(ss);
+		// }
+		// $(document).ready(function(){
+		// 	setClip(document.getElementById('bb'));
+		// 	$(window).on('resize',function(){
+		// 		setClip(document.getElementById('bb'));
+		// 	});
+
+		//});
+	</script>
+</head>
+<body>
+<div class="htmleaf-container">
+<div class="bb" id="bb"></div>
+</div>
+
+</body></html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" style="background:#f7f7f9;">
+<head>
+    <title>Aspect Ratio with Preview Pane | Jcrop Demo</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.Jcrop.js"></script>
+    <script type="text/javascript">
+        var JCROPER=null,SUBMITDATA=null;
+        function inArray (e,a,i){var l;if(a){l = a.length;i = i ? i < 0 ? Math.max( 0, l + i ) : i : 0;for ( ;i < l;i++ ) {if ( i in a && a[ i ] === e ){return i;}}}return -1;}
+        function dataURLtoBlob(dataurl){
+            var arr=dataurl.split(','),mime=arr[0].match(/:(.*?);/)[1],bstr=atob(arr[1]),n=bstr.length,u8arr=new Uint8Array(n);
+            while(n--){u8arr[n]=bstr.charCodeAt(n);}
+            return new Blob([u8arr],{type:mime});
+        }
+        function canvasToBlob(cv){
+            var dataurl=cv.toDataURL('image/png');
+            return dataURLtoBlob(dataurl);
+        }
+        function submit(){
+            var formData = new FormData();
+            var params = {"mediaType":3};
+            //添加图片的blob
+            if (SUBMITDATA){
+                params.fileType = SUBMITDATA.type.split("/")[1];
+                formData.append('file', SUBMITDATA);
+            }
+
+            //添加请求参数的blob
+            var dataWithType = new Blob([JSON.stringify(params)],{
+                type: "application/json"
+            });
+            formData.append("data", dataWithType);
+
+            //上传数据
+            $.ajax({
+                url: '',
+                type:'post',
+                processData:false,
+                contentType:false,
+                data:formData,
+                dataType:'json',
+                success:function (data){
+                    var obj = eval(data);
+                    if (obj.responseCode == '0'){}
+                },
+                error: function (jqXHR, textStatus, errorThrown){
+                    alert(textStatus + "---" + errorThrown);
+                }
+            });
+        }
+        function JCroper(e,w,h){
+            var jcrop_api,boundx,boundy,img=e;
+                cw=w,
+                ch=h;
+            $(e).Jcrop({
+                //onChange: updatePreview,
+                onSelect:createPreview,
+                setSelect: [ 0, 0, cw, ch ],
+                allowResize:false,
+                aspectRatio:cw/ch
+            },function(){
+                var bounds=this.getBounds();
+                boundx=bounds[0];
+                boundy=bounds[1];
+                jcrop_api=this;
+            });
+            function createPreview(c){
+                if(parseInt(c.w)>0){
+                    var _canvas=document.createElement('canvas'),
+                        ctx=_canvas.getContext("2d");
+                        
+                    var rx=cw/c.w,ry=ch/c.h;
+                    var _sw=boundx,_sh=boundy,
+                        _w=Math.round(rx*_sw),
+                        _h=Math.round(ry*_sh),
+                        _x=0-Math.round(rx*c.x),
+                        _y=0-Math.round(ry*c.y);
+                        
+                    _canvas.width=cw;
+                    _canvas.height=ch;
+                    ctx.drawImage(img,_x,_y,_w,_h);
+                    
+//                    var _image=new Image();
+//                    _image.src=_canvas.toDataURL('image/png');
+//                    $(_image).appendTo(document.body);
+
+                    SUBMITDATA=dataURLtoBlob(_canvas.toDataURL('image/png'));
+                }
+            };
+        };
+    </script>
+    <link rel="stylesheet" href="css/jquery.Jcrop.css" type="text/css"/>
+    <style>
+            .upload{display:block;width:600px;margin:2em auto;background:#e0e0e2;padding:0.25em 1em;border-radius:0.5em;}
+            .upload *{display:inline-block;vertical-align:top;font-style:normal;text-decoration:none;line-height:30px;color:#555555;}
+            .upload input{display:none!important;}
+            .upload svg{width:30px;height:30px;margin-right:0.5em;}
+            
+            .jcrop-holder{margin:0 auto;}
+            .imagearea img{max-width:1024px;}
+
+            .save{position:absolute;right:80px;top:30px;background:#0aa9dc;color:white;padding:0.5em 1em;border-radius:0.5em;cursor:pointer;}
+    </style>
+</head>
+<body>
+<form name="imageForm" enctype="multipart/form-data" method="POST">
+    <label class="upload" id="upload">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+        <path d="M19.355 10.035c-0.68-3.44-3.715-6.035-7.355-6.035-2.89 0-5.395 1.64-6.65 4.035-3.005 0.325-5.35 2.87-5.35 5.965 0 3.315 2.685 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.055-4.78-4.645-4.965zM14 13v4h-4v-4h-3l5-5 5 5h-3z" fill="#444444"></path>
+        </svg>
+        <input type="file">
+        <s>请选择文件！</s>
+    </label>
+    <script>
+        $(document).on('click','#save',submit);
+        $(document).on('change','input[type="file"]',function(){
+            if(!this.files || !this.files[0]){return;}
+            $('#upload s').text(this.value);
+            var _e=this,_file=this.files[0],_type=_file.type;
+            var _types=['image/jpeg','image/png'];
+            if(inArray(_type,_types)<0){
+                alert('文件类型不正确，请重新选择，仅支持: jpg,png');return;
+            }
+            var  reader=new FileReader();
+                    reader.onload=function(e){
+                        var _imgData=e.target.result,
+                        _img=new Image();
+                        _img.src=_imgData;
+                        $(_e).replaceWith('<input type="file">');
+                        $('.jcrop-holder').remove();
+                        $('#imagearea').empty().append(_img);
+                        JCROPER=new JCroper(_img,400,300);
+                    }
+                reader.readAsDataURL(_file);
+        });
+    </script>
+</form>
+<b class="save" id="save">保存</b>
+<div id="imagearea"></div>
+</body>
+</html>
+

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Tinymce</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/jquery-3.2.1.min.js"></script>
+	<script src="tinymce.min.js"></script>
+    <script>
+       tinymce.init({
+        selector: '#richtext',
+           language:"zh_CN",
+           inline: true,
+           fontsize_formats: '8pt 10pt 12pt 14pt 18pt 24pt 36pt 48pt',
+           plugins: [
+               'advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker imagetools photo',
+               'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
+               'save table contextmenu directionality emoticons template paste textcolor'
+           ],
+           toolbar1: 'insert | undo redo | bullist numlist | photo emoticons  code | xiumi',
+           toolbar2: 'bold italic forecolor backcolor | fontsizeselect | alignleft aligncenter alignright alignjustify |  | removeformat ',
+           templates: [
+                {title: 'Some title 1', description: 'Some desc 1', content: 'My content'},
+                {title: 'Some title 2', description: 'Some desc 2', url: 'development.html'}
+              ],
+           setup: function (editor) {
+//                editor.on('OpenWindow', function (e) {
+//                		J('#' + e.win._id).css("zIndex", Ui.zindex(2));
+//                });
+                editor.addButton('xiumi', {
+    		      text: '秀米',
+    		      icon: '',
+    		      onclick: function () {
+    		          //window.open('http://hgs.xiumi.us/uedit/');
+    		          var _w=editor.windowManager.open({
+                            title: '秀米',
+                            url: 'xiumi/xiumi.html',
+                            width: window.innerWidth,
+                            height: window.innerHeight,
+                            buttons: [{
+                                text: 'Close',
+                                onclick: 'close'
+                            }]
+                        });
+    		            window.top.__xiumi=_w;
+    		            window.top.__editor=editor;
+                        $(_w.$el).addClass('activeWindow');
+                        $('#mce-modal-block').css('visibility','hidden');
+    		      }
+    		    });
+          },
+           content_css: []
+    });
+    </script>
+    <style>
+        html,body{background:#f0f0f2;}
+        .richtext{background:white;padding:1em;margin:5% auto;}
+        .richtext p{margin:0.25em 0 !important;}
+    </style>
+  </head>
+
+  <body>
+  <div class="richtext" id="richtext" style="width:375px">
+      fdsafdsafd<br/>
+      fdsafdsafewqfeq<br/>
+      fewqfewqfe
+  </div>
+</body>
+</html>

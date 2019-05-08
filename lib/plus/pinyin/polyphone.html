@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8"/>
+	<title>带词库识别多音字的汉字转拼音</title>
+	<link rel="stylesheet" type="text/css" href="simple-input-method/simple-input-method.css">
+	<style type="text/css">
+	body{font-family: 'Microsoft Yahei'; font-size: 16px;}
+	* {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	input[type="text"] {
+		height: 34px;
+		padding: 6px 12px;
+		font-size: 14px;
+		line-height: 1.42857143;
+		color: #555;
+		background-color: #fff;
+		background-image: none;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+		-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+		transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	}
+	input[type="text"]:focus {
+		border-color: #66afe9;
+		outline: 0;
+		-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+		box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+	}
+	h2 > span {
+		color: #B10000;
+		font-size: 0.8em;
+	}
+	#test {margin-top: 10px;}
+	.loading-tip{color: #00960A;margin-bottom: 10px;}
+	p {max-width: 500px;background: #EEE;padding: 10px;}
+	textarea{width:800px;height:300px;background:#f0f0f2;padding:1em;}
+	</style>
+</head>
+
+<body>
+	<h2>带词库可以识别多音字的汉字转拼音：</h2>
+	<textarea name="input" id="input"></textarea>
+	<h3>转换结果：</h3>
+	<textarea name="output" id="output"></textarea>
+	
+        <script src="../../js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="dict/pinyin_dict_withtone.js"></script>
+	<script type="text/javascript" src="dict/pinyin_dict_polyphone.js"></script>
+	<script type="text/javascript" src="pinyinUtil.js"></script>
+	
+	<script type="text/javascript">
+	var indexUpper = function(s){return s.replace(/\b\w+\b/g,function(word){return word.substring(0,1).toUpperCase() + word.substring(1);});}
+	        $('#input').on('blur',function(){
+	                var _val=$(this).val()||"";
+	                var _result=_val.match(/([\u4E00-\u9FA5]+)([^\u4E00-\u9FA5]*)/gi);
+	                var _output=[];
+	                if(_result){
+	                    for(var i=0,l=_result.length;i<l;i++){
+	                        (function(m){
+	                                var _w=m.match(/([\u4E00-\u9FA5]+)/gi)[0],
+	                                        _W=m.replace(_w,"");
+	                                        _w=pinyinUtil.getPinyin(_w, ' ', false, true);
+	                                        var _ws=_w.split(/[\s]+/gi),_wst=[];
+	                                        
+	                                        for(var _i=0,_l=_ws.length;_i<_l;_i++){
+	                                            //_wst.push(indexUpper(_ws[_i]));
+	                                            _wst.push(_ws[_i]);
+	                                        }
+	                                        _output.push(_wst.join(" "));
+	                                        _output.push(_W);
+	                        })(_result[i]);
+	                    }
+	                }
+	                $('#output').val(_output.join(" "));
+	        });
+	</script>
+</body>
+</html>

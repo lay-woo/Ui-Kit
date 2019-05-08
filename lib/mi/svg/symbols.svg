@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" display="none" x="0px" y="0px" xml:space="preserve">
+<defs>
+	<symbol id="s-photoes"	viewBox="0 0 30 30"><path d="M25.58,26.38H7.89a4.16,4.16,0,0,1-4.16-4.16V4.28A4.16,4.16,0,0,1,7.89.12H25.58a4.16,4.16,0,0,1,4.16,4.16V22.23A4.16,4.16,0,0,1,25.58,26.38ZM7.89,2.12A2.16,2.16,0,0,0,5.74,4.28V22.23a2.16,2.16,0,0,0,2.16,2.16H25.58a2.16,2.16,0,0,0,2.16-2.16V4.28a2.16,2.16,0,0,0-2.16-2.16H7.89Z" /><path d="M26.26,29.91H4.16A4,4,0,0,1,.21,26V3.86H1.79V26a2.37,2.37,0,0,0,2.37,2.37h22.1v1.58Z" /><polygon points="12.39 14.8 15.37 18.77 19.72 13.33 25.58 20.66 8 20.66 12.39 14.8" /></symbol>
+	<symbol id="s-users"	viewBox="0 0 30 30"><path d="M1.21,3.86V26a3.16,3.16,0,0,0,3.16,3.16H26.47" style="fill:none;stroke:#444;stroke-miterlimit:10;stroke-width:1.57894736842105px"/><path d="M29,3.77A2.77,2.77,0,0,0,26.23,1H7.77A2.77,2.77,0,0,0,5,3.77V22.23A2.77,2.77,0,0,0,7.77,25H26.23A2.77,2.77,0,0,0,29,22.23V3.77Z" style="fill:none;stroke:#444;stroke-miterlimit:10;stroke-width:2px"/><circle cx="16.68" cy="8.8" r="3.8" /><path d="M10,18.95C10,16.41,14.46,15,17,15s7,1.39,7,3.93V22H10V18.95Z" /></symbol>
+	<symbol id="s-new"	viewBox="0 0 30 30"></symbol>
+</defs>
+</svg>
+
