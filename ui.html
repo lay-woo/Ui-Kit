@@ -7,6 +7,7 @@
 <script src="./lib/js/jquery.js"></script>
 <script src="./lib/ui/ui.js"></script>
 <script src="./lib/ui/ui.plus.js"></script>
+<script src="./lib/ui/ui.region.js"></script>
 <script>
 
 </script>
@@ -20,8 +21,9 @@
 	#abc.on{display:block;}
 	.j_popup_b #abc{display:block;}
 
-	.menu{position: fixed;right:0px;top:0px;background: #e0e0e0;padding:3em;height:100%;overflow:auto;}
+	.menu{position: fixed;right:0px;top:0px;background: #e0e0e0;padding:3em 3em 3em 1.5em;height:100%;overflow:auto;}
 	.menu a{display: block;padding:0.5em;}
+
 </style>
 <div class="menu">
 	<a href="#Button">Button</a>
@@ -41,6 +43,8 @@
 	<a href="#Tree">Tree</a>
 	<a href="#Tabs">Tabs</a>
 	<a href="#Scroller">Scroller</a>
+	<a href="#Region">Region</a>
+	
 </div>
 <div class="container" style="margin-right:180px;">
 	<h1><a href="https://github.com/lay-woo/Ui-Kit">Ourway Ui kit</a></h1>
@@ -363,7 +367,7 @@
 	<div style="width:750px;">
 		<ul class="pagination">
 			<li class="prv"><i class="i-chevron_left"></i></li>
-			<li class="d">1</li>
+			<li class="d on">1</li>
 			<li class="d">2</li>
 			<li class="d">3</li>
 			<li class="d">4</li>
@@ -394,6 +398,9 @@
 	<img class="e_ava" src="assets/images/thetetons.jpg" />
 	Square
 	<img class="e_squ" src="assets/images/thetetons.jpg" />
+
+	Icon
+	<img class="e_ico" src="assets/images/thetetons.jpg" />
 	<br/>
 	<br/>
 	<h3><a name="Gallery"></a>Gallery</h3>
@@ -424,8 +431,8 @@
 			.tile .state.on{display:block;}
 		</style>
 		<b class="b b01" state>State Button</b>
+		<b class="b" state>State Button</b><br/>
 		<b class="b" state nexus="#abcd">State nexus element</b>
-		<b class="b" state>State Button</b>
 		<div id="abcd">abcd</div>
 
 		<div class="tile" state>
@@ -715,5 +722,56 @@
 
 					There are already a number of documentaries lined up for Apple TV+, including Home, The Elephant Queen and future Ron Howard productions. This, however, could help Apple score other big docs and ensure that they thrive. That could give it a better chance of competing with Amazon, Netflix and others that are already old hands at producing real-world shows for streaming services.<br/><br/>
 				</div>
+			</div>
+
+			<h3><a name="Region"></a>Region</h3>
+			<style>
+				.j_region{width:375px;position:relative;padding-bottom:10px;}
+				.j_region s{display:block;margin-left:1em;}
+				.j_region s>b{display:block;}
+				.j_region b>i{display:block;padding:0.25em 0.5em;cursor:pointer;}
+				.j_region>s.dp_3{max-height:300px;overflow:auto;padding-right:10px;position:relative;z-index:0;}
+
+				.j_region>s.dp_3>b{border-top:1px solid #f0f0f0;}
+				.j_region>s.dp_3>b:after{content:'';display:block;height:0;line-height:0;font-size:0;clear:both;}
+				.j_region>s.dp_3>b:hover{background:#f5f5f7;}
+				.j_region>s.dp_3>b>i{font-size:1.125em;line-height:1.25em;padding-left:0;}
+
+				.j_region>s.dp_3>b.p{margin-bottom:1em;border-top:1px solid #f0f0f0;}
+				.j_region>s.dp_3>b.p:hover{background:none;}
+				.j_region>s.dp_3>b.p:after{content:'';display:block;height:0;line-height:0;font-size:0;clear:both;}
+				.j_region>s.dp_3>b.p>s{margin-left:3em;}
+				.j_region>s.dp_3>b.p>i{float:left;width:3em;word-break:break-all;color:#a0a0a0;padding-left:0;}
+
+				.j_region>s.dp_3 s.lv_1{margin:0em 0 0em 0;}
+				.j_region>s.dp_3 s.lv_1>b>i{background:#f5f5f7;font-weight:bolder;font-size:1.25em;line-height:1.25em;margin-bottom:1px;}
+
+				.j_region>s.dp_3 s.lv_2{margin:0.5em 0 0.625em 0;}
+				.j_region>s.dp_3 s.lv_2>b{display:inline-block;vertical-align:top;}
+				.j_region>s.dp_3 s.lv_2>b>i{min-width:5em;font-size:1.125em;line-height:1.25em;}
+				.j_region>s.dp_3 s.lv_2>b>i:hover{background:#f0f0f2;cursor:pointer;border-radius:0.5em;}
+
+				.j_region .used{padding:1em 0;margin:0!important;}
+				.j_region .used s b{display:inline-block;vertical-align:top;}
+				.j_region .used s b i{color:#1c75c6;font-size:1.125em;cursor:pointer;line-height:1em;}
+				.j_region .used s b i:hover{background:#1c75c6;color:white;border-radius:0.5em;}
+
+				.j_region .filter{position:relative;height:56px;padding:14px 40px 16px 10px;margin:0 1em 0 0.25em;}
+				.j_region .filter input{border:0;background:#f0f0f2;width:100%;border-radius:0.5em;padding:0 1em;}
+				.j_region .filter i{position:absolute;right:0;top:0;height:56px;line-height:54px;width:30px;text-align:center;}
+				.j_region.filtering .filter i{color:#1c75c6;}
+
+				.j_region .filterResults{display:none!important;position:absolute;z-index:1;left:0px;right:0px;top:56px;bottom:10px;background:white;overflow:auto;}
+				.j_region .filterResults .note{margin:60px 20%;font-size:1.25em;color:#a0a0a2;line-height:1.5em;text-align:center;}
+				.j_region.filtering .filterResults{display:block!important;}
+				.j_region.filtering .filterResults s{display:block;padding:1em;border-top:1px solid #f0f0f2;}
+				.j_region.filtering .filterResults s:hover{background:#f5f5f7;}
+				.j_region.filtering .filterResults s b{display:inline-block;vertical-align:top;margin-right:0.5em;color:#909092;font-size:1.125em;cursor:pointer;}
+				.j_region.filtering .filterResults s b:before{content:"> ";color:#c0c0c2;}
+				.j_region.filtering .filterResults s b:first-child:before{display:none;}
+				.j_region.filtering .filterResults s b.m{color:#1c75c6;}
+			</style>
+			<div>
+				<input type="text" region />
 			</div>
 </div>

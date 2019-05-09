@@ -272,8 +272,9 @@ select[select]{visibility:hidden;}
 
 .e_tabs{display:block;}
 .e_tabs .pr{vertical-align:top;*zoom:1;display:inline-block;padding:0 0.7em;}
-.e_tabs .tab{display:inline-block;vertical-align:top;letter-spacing:0;height:2.6em;line-height:2.6em;cursor:pointer;}
-.e_tabs .tab_on{cursor:default;color:#337ab7;}
+.e_tabs .tab{display:inline-block;vertical-align:top;letter-spacing:0;padding:0 0.5em;height:2.2em;line-height:2.2em;cursor:pointer;}
+.e_tabs .tab_on{cursor:default;color:#337ab7;position: relative;}
+.e_tabs .tab_on:after{content:"";border-bottom:4px solid #337ab7;position:absolute;left:0;bottom:0;width:100%;}
 
 .e_tabContents{}
 .e_tabContents .tabContent{display:none!important;}
@@ -282,6 +283,7 @@ select[select]{visibility:hidden;}
 
 .e_ava{width:50px;height:50px;border-radius:100em;object-fit:cover;overflow:hidden;}
 .e_squ{width:140px;height:140px;border-radius: 3px;object-fit:cover;overflow:hidden;}
+.e_ico{width:140px;height:140px;border-radius: 30%;object-fit:cover;overflow:hidden;}
 
 /*==Layout==========================*/
 .kv{display:table-row;}
@@ -312,7 +314,8 @@ a.d_lh:before{content:"\e9d2";font-family:'is'!important;font-size:16px;float:ri
 .pagination .jmp input{width:2em;border:0!important;padding:0 0.25em;text-align:right;margin-right:0.25em;height:26px;display:inline-block;vertical-align: top;}
 .pagination .jmp i{padding:0 0.25em;}
 .pagination .d{border:1px solid #e0e0e0;border-left:0;min-width:30px;}
-.pagination .prv{border:1px solid #e0e0e0;width:3em;
+.pagination .d.on{color:#337ab7;}
+.pagination .prv{border:1px solid #e0e0e0;width:2.5em;
   border-bottom-left-radius:3px;
   border-top-left-radius:3px;
 }
