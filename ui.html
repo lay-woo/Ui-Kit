@@ -20,7 +20,7 @@
 	#abc.on{display:block;}
 	.j_popup_b #abc{display:block;}
 
-	.menu{position: fixed;right:0px;top:0px;background: #e0e0e0;padding:3em;height:100%;}
+	.menu{position: fixed;right:0px;top:0px;background: #e0e0e0;padding:3em;height:100%;overflow:auto;}
 	.menu a{display: block;padding:0.5em;}
 </style>
 <div class="menu">
@@ -32,6 +32,9 @@
 	<a href="#Tips">Tips</a>
 	<a href="#Popuper">Popuper</a>
 	<a href="#Calender">Calender</a>
+	<a href="#Pagination">Pagination</a>
+	<a href="#List">List</a>
+	<a href="#Images">Images</a>
 	<a href="#Gallery">Gallery</a>
 	<a href="#State">State</a>
 	<a href="#Module">Module</a>
@@ -39,7 +42,7 @@
 	<a href="#Tabs">Tabs</a>
 	<a href="#Scroller">Scroller</a>
 </div>
-<div class="container" style="margin-right:140px;">
+<div class="container" style="margin-right:180px;">
 <h1>Ourway Ui kit</h1>
 <br/>
 <h3><a name="Button" ></a>Button</h3>
@@ -99,18 +102,42 @@
 	<t>Button</t>
 </b>
 <b class="b"><t>Button</t><i class="i-keyboard_arrow_down"></i></b>
-
+<div class="mt-1 mb-1 text-center">
+  <b class="b_ith"><i class="io-home"></i>Home </b>
+  <b class="b_ith"><i class="io-color_lens"></i>UI </b>
+  <b class="b_ith"><i class="io-email"></i> Email </b>
+  <b class="b_ith"><i class="io-map"></i></i> Maps </b>
+</div>
+<div class="mt-1 mb-1 text-center">
+  <b class="b_itv"><i class="io-home"></i>Home </b>
+  <b class="b_itv"><i class="io-color_lens"></i>UI </b>
+  <b class="b_itv"><i class="io-email"></i> Email </b>
+  <b class="b_itv"><i class="io-map"></i></i> Maps </b>
+</div>
 <br/>
 
 <h3><a name="Input"></a>Input</h3>
-
-<label class="e_chb"><input type="radio" name="a" checked="true" /><i>Radio Label</i></label>
-<br/>
-<label class="e_chb"><input type="radio" name="a" /><i>Radio Label</i></label>
-<br/>
-<label class="e_chb"><input type="checkbox" name="a" checked="true" /><i>Checkbox Label</i></label>
-<br/>
-<label class="e_chb"><input type="checkbox" name="a" /><i>Checkbox Label</i></label>
+<div class="kv">
+	<b class="k">Radios</b>
+	<s class="v">
+		<label class="e_chb"><input type="radio" name="a" checked="true" /><i>Radio Label</i></label>
+		<label class="e_chb"><input type="radio" name="a" /><i>Radio Label</i></label>
+	</s>
+</div>
+<div class="kv">
+	<b class="k">Checkboxs</b>
+	<s class="v">
+		<label class="e_chb"><input type="checkbox" name="a" checked="true" /><i>Checkbox Label</i></label>
+		<label class="e_chb"><input type="checkbox" name="a" /><i>Checkbox Label</i></label>
+	</s>
+</div>
+<div class="kv">
+	<b class="k">Switch</b>
+	<s class="v">
+		<label class="e_swi"><input type="checkbox" /><i>On</i><b>Off</b></label>
+		<label class="e_swi"><input type="checkbox" /><i>Yes</i><b>No</b></label>
+	</s>
+</div>
 <br/>
 
 <s class="e_txt">
@@ -152,6 +179,7 @@
 
 <br/><br/>
 
+
 <h3><a name="Tag"></a>Tag</h3>
 <s class="e_tags">
 	<b class="tag">Tags</b>
@@ -164,7 +192,7 @@
 <h3><a name="Select" ></a>Select</h3>
 
 <s class="e_slt" select>
-	<s class="slv"><input class="t" type="text" value="Option B" readonly="" /></s>
+	<s class="slv"><input class="t" type="text" value="Option B"  /></s>
 	<s class="slo">
 		<dl class="os" scroller>
 			<dd class="o o_dis">Option A</dd>
@@ -329,6 +357,41 @@
 <s class="e_txt">
 	<input type="text" placeholder="Date & time" name="" date format="YYYY/MM/DD hh:mm"/>
 </s>
+<h3><a name="Pagination"></a>Pagination</h3>
+<div style="width:750px;">
+<ul class="pagination">
+    <li class="prv"><i class="i-chevron_left"></i></li>
+    <li class="d">1</li>
+    <li class="d">2</li>
+    <li class="d">3</li>
+    <li class="d">4</li>
+    <li class="d">5</li>
+    <li class="d">6</li>
+    <li class="d">7</li>
+    <li class="d">...</li>
+    <li class="nxt"><i class="i-chevron_right"></i></li>
+    <li class="jmp">
+    	<input value="1" /><b>/30</b><i class="i-arrow_forward"></i>
+    </li>
+</ul>
+</div>
+<h3><a name="List"></a>List</h3>
+<div style="width:300px;">
+	<a class="d_lh"><i class="io-home"></i><s>Link</s><s>3334321 3432</s></a>
+	<div class="d_lh"><i class="io-home"></i><s>Home</s><s>3334321 3432</s></div>
+	<div class="d_lh"><i class="io-color_lens"></i><s>Buttons with a vertical distribution and big size</s><s>24</s></div>
+	<div class="d_lh"><i class="io-email"></i><s>Email</s><s>10</s></div>
+	<div class="d_lh"><i class="io-map"></i></i><s>Maps</s><s>33</s></div>
+</div>
+<br/>
+<br/>
+<h3><a name="Images"></a>Images</h3>
+Avatar
+<img class="e_ava" src="assets/images/thetetons.jpg" />
+Square
+<img class="e_squ" src="assets/images/thetetons.jpg" />
+<br/>
+<br/>
 <h3><a name="Gallery"></a>Gallery</h3>
 <style type="text/css">
 	.gallery img{width:120px;height:90px;object-fit: cover;margin:0 1em 1em 0;}
@@ -384,7 +447,7 @@
 		<h3>Title</h3>
 	</div>
 	<div class="cb">
-		<div class="li-atcf">
+		<div class="d_atcf">
 					<i class="img"></i>
 			<b class="t">Deadline reports that the company has hired A&E's Molly Thompson as its new Head of Documentaries. She founded </b>
 			<p class="tx">There are already a number of documentaries lined up for Apple TV+, including Home, The Elephant Queen and future Ron Howard productions. This, however, could help Apple score other big docs and ensure that they thrive. </p>
@@ -395,7 +458,7 @@
 			</s>
 			<i class="d">2019/03/26 11:11</i>
 		</div>
-		<div class="li-atc">
+		<div class="d_atc">
 			<s class="ss">
 				<i class="comments">593</i>
 				<i class="likes">593</i>
@@ -404,35 +467,35 @@
 			<b class="t">could help Apple score other big docs and ensure...</b>
 			<i class="d">2019/03/26 11:11</i>
 		</div>
-		<div class="li-atc">
+		<div class="d_atc">
 			<s class="ss">
 				<i class="views">593</i>
 			</s>
 			<b class="t">documentaries lined up for Apple TV+, including Home...</b>
 			<i class="d">2019/03/26 11:11</i>
 		</div>
-		<div class="li-atc">
+		<div class="d_atc">
 			<s class="ss">
 				<i class="views">53</i>
 			</s>
 			<b class="t">docs and ensure that they thrive...</b>
 			<i class="d">2019/03/26 11:11</i>
 		</div>
-		<div class="li-atc">
+		<div class="d_atc">
 			<s class="ss">
 				<i class="views">93</i>
 			</s>
 			<b class="t">company has hired A&E's Molly Thompson as its...</b>
 			<i class="d">2019/03/26 11:11</i>
 		</div>
-		<div class="li-atc">
+		<div class="d_atc">
 			<s class="ss">
 				<i class="views">34</i>
 			</s>
 			<b class="t">documentaries lined up for Apple TV+, including Home...</b>
 			<i class="d">2019/03/26 11:11</i>
 		</div>
-		<div class="li-atc">
+		<div class="d_atc">
 			<s class="ss">
 				<i class="views">16</i>
 			</s>
