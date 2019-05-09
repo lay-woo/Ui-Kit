@@ -164,14 +164,14 @@ label.e_file input{display:none!important;}
 label.e_file b{line-height:30px;padding:0 0.5em;}
 
 
-.e_tags .tag{cursor:default;display:inline-block;vertical-align:top;background:#eeeeee;border-radius:15px;margin-right:10px;line-height:24px;padding-left:0.75em;}
+.e_tags .tag{cursor:default;display:inline-block;vertical-align:top;background:#eeeeee;border-radius:15px;margin-right:0.25rem;margin-bottom:0.25rem;line-height:24px;padding-left:0.75em;}
 .e_tags .tag>b{display:inline-block;vertical-align:top;line-height:30px;padding:0 7px 0 14px;}
 .e_tags .tag:after{font-family:"is"!important;content:'\e9d8';display:inline-block;vertical-align:top;line-height:24px;width:30px;text-align:center;border-radius:15px;cursor:pointer;}
 .e_tags .tag:hover{background:#f7f7f7;}
 
 .e_tags [contenteditable]{display:inline-block;vertical-align:top;border:1px solid #eeeeee;line-height:24px;border-radius:15px;padding:0em 0.5em;white-space: nowrap;}
 .e_tags [contenteditable]:after{font-family:"is"!important;content:'\e91d';line-height:24px;display:inline-block;vertical-align:top;cursor:pointer;}
-.e_tags [contenteditable]:focus{background:#eeeeee;}
+.e_tags [contenteditable]:focus{background:#337ab7;color:#ffffff;border:0;}
 .e_tags [contenteditable]:focus:after{margin-left:0.5em;}
 
 .e_tags .b_add{display:inline-block;vertical-align:top;height:30px;width:30px;line-height:30px;border-radius:15px;background:#eeeeee;}
@@ -296,9 +296,11 @@ select[select]{visibility:hidden;}
 .dc>.cf{height:44px;display:block;padding:0.5rem;border-top:1px solid #e0e0e0;}
 
 
-.d_lh{display:block;width:100%;padding:10px 0;border-top:1px solid #e0e0e0;}
+.d_lh{display:block;width:100%;padding:10px 0;border-top:1px solid #e0e0e0;cursor:default;}
 .d_lh>*{display:table-cell!important;vertical-align: top;line-height:1.25em;}
+.d_lh>*:first-child{width:100%;}
 .d_lh>i:first-child{width:24px;font-size:24px;padding-right:0.25em;line-height:20px;}
+.d_lh>i:first-child svg{width:24px;height:24px;}
 .d_lh>i+*{width:100%;padding-right:0.5em;}
 .d_lh>*:last-child{text-align: right;padding-right:0.5em;}
 a.d_lh:before{content:"\e9d2";font-family:'is'!important;font-size:16px;float:right;display:inline-block;vertical-align:top;}
