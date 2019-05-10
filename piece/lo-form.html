@@ -2,6 +2,10 @@
 <link href="../lib/is/is.css" rel="stylesheet">
 <link rel="stylesheet"  href="../lib/css/reset.css" />
 <link rel="stylesheet"  href="../lib/css/lo.css" />
+<style>body{padding:4em!important;opacity: 1;}</style>
+<!--header-->
+
+
 <form>
 	<div class="fd">
 		<label class="k">Required</label>
@@ -24,7 +28,30 @@
 	<div class="fd">
 		<label class="k">Range Length</label>
 		<div class="v">
-			<input type="text" required="" placeholder="Text between 5 - 10 chars length">
+			<label class="e_swi"><input type="checkbox" /><i>On</i><b>Off</b></label>
+			<label class="e_swi"><input type="checkbox" /><i>Yes</i><b>No</b></label>
+		</div>
+	</div>
+	<div class="fd">
+		<label class="k">Range Length</label>
+		<div class="v">
+			<select >
+				<option disabled="">Option A</option>
+				<option value="B">Option B</option>
+				<option>Option C</option>
+				<option>Option D</option>
+			</select>
+		</div>
+	</div>
+	<div class="fd">
+		<label class="k">Range Length</label>
+		<div class="v">
+			<select multiple='multiple'>
+				<option disabled="">Option A</option>
+				<option value="B">Option B</option>
+				<option>Option C</option>
+				<option>Option D</option>
+			</select>
 		</div>
 	</div>
 	<div class="fd">
@@ -64,16 +91,16 @@
 		<label class="k">Min check</label>
 		<div class="col-sm-6">
 			<div class="custom-controls-stacked">
-				<label class="k">
-					<input id="ck1" name="ck1" type="checkbox" value="bar" ><span class="custom-control-label">Option 1
+				<label class="e_chb">
+					<input id="ck1" name="ck1" type="radio" value="bar" ><span class="custom-control-label">Option 1
 					</span>
 				</label>
-				<label class="k">
-					<input id="ck2" name="ck2" type="checkbox" value="bar2" ><span class="custom-control-label">Option 2
+				<label class="e_chb">
+					<input id="ck2" name="ck1" type="radio" value="bar2" ><span class="custom-control-label">Option 2
 					</span>
 				</label>
-				<label class="k">
-					<input id="ck3" name="ck3" type="checkbox" value="bar3" required="" ><span class="custom-control-label">Option 3</span>
+				<label class="e_chb">
+					<input id="ck3" name="ck1" type="radio" value="bar3" required="" ><span class="custom-control-label">Option 3</span>
 				</label>
 				<div id="error-container1"></div>
 			</div>
@@ -83,13 +110,13 @@
 		<label class="k">Max check</label>
 		<div class="col-sm-6">
 			<div class="custom-controls-stacked">
-				<label class="k">
+				<label class="e_chb">
 					<input type="checkbox" value="bar" id="e1" ><span class="custom-control-label">Option 1</span>
 				</label>
-				<label class="k">
+				<label class="e_chb">
 					<input type="checkbox" value="bar" id="e2" ><span class="custom-control-label">Option 2</span>
 				</label>
-				<label class="k">
+				<label class="e_chb">
 					<input type="checkbox" value="bar" id="e3"  ><span class="custom-control-label">Option 3</span>
 				</label>
 				<div id="error-container2"></div>
@@ -132,7 +159,7 @@
 			<textarea required=""></textarea>
 		</div>
 	</div>
-	<div class="fd text-right">
+	<div class="fd_ctrl">
 		<div class="">
 			<button class="b" type="submit">Submit</button>
 			<button class="b">Cancel</button>
