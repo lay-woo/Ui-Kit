@@ -66,8 +66,12 @@ hr.br{border:0!important;opacity:0;}
 
 /*  form ------------------------*/
 input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="date"],
 input[type="password"],
-textarea{min-height:30px;border-radius:3px;padding:0.25em;border-width:1px;outline:0!important;border:1px solid #c0c0c0;resize:none;}
+textarea{min-height:30px;border-radius:3px;padding:0.25em 0.5em;border-width:1px;outline:0!important;border:1px solid #c0c0c0;resize:none;}
+input[type="password"]{letter-spacing:0.5em;}
 
 [class^='e_'],.e{display:inline-block;vertical-align:top;padding:0;margin:0;border-radius:3px;min-height:30px;}
 [class^='e_'] *{padding:0;margin:0;border:0;line-height:inherit;min-width:auto;min-height:auto;width:auto;height:auto;}

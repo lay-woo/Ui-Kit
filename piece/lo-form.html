@@ -1,7 +1,7 @@
 <meta charset="utf-8">
 <link href="../lib/is/is.css" rel="stylesheet">
-<link rel="stylesheet"  href="../lib/css/reset.css" />
-<link rel="stylesheet"  href="../lib/css/lo.css" />
+<link rel="stylesheet" href="../lib/css/reset.css" />
+<link rel="stylesheet" href="../lib/css/lo.css" />
 <style>body{padding:4em!important;opacity: 1;}</style>
 <!--header-->
 
@@ -26,14 +26,25 @@
 		</div>
 	</div>
 	<div class="fd">
-		<label class="k">Range Length</label>
+		<label class="k">Switch</label>
 		<div class="v">
-			<label class="e_swi"><input type="checkbox" /><i>On</i><b>Off</b></label>
 			<label class="e_swi"><input type="checkbox" /><i>Yes</i><b>No</b></label>
 		</div>
 	</div>
 	<div class="fd">
-		<label class="k">Range Length</label>
+		<label class="k">Attement</label>
+		<div class="v">
+			<label class="e_file"><input type="file" name="a"  /><i class="i-attach_file">Select a file</i></label>
+		</div>
+	</div>
+	<div class="fd">
+		<label class="k">Photo</label>
+		<div class="v">
+			<label class="e_file"><input type="file" name="a"  /><i class="i-image">Select an image</i></label>
+		</div>
+	</div>
+	<div class="fd">
+		<label class="k">Select</label>
 		<div class="v">
 			<select >
 				<option disabled="">Option A</option>
@@ -44,7 +55,7 @@
 		</div>
 	</div>
 	<div class="fd">
-		<label class="k">Range Length</label>
+		<label class="k">Multiple select</label>
 		<div class="v">
 			<select multiple='multiple'>
 				<option disabled="">Option A</option>
@@ -79,78 +90,70 @@
 		</div>
 	</div>
 	<div class="fd">
-		<label class="k">Equal To</label>
-		<div class="col-sm-4 col-lg-3 mb-3 mb-sm-0">
-			<input id="pass2" type="password" required="" placeholder="Password">
-		</div>
-		<div class="col-sm-4 col-lg-3">
-			<input type="password" required="" placeholder="Re-Type Password">
+		<label class="k">Password</label>
+		<div class="v">
+			<input type="password" required="" >
+			<input type="password" required="" >
 		</div>
 	</div>
 	<div class="fd">
 		<label class="k">Min check</label>
-		<div class="col-sm-6">
-			<div class="custom-controls-stacked">
-				<label class="e_chb">
-					<input id="ck1" name="ck1" type="radio" value="bar" ><span class="custom-control-label">Option 1
+		<div class="v">
+			<label class="e_chb">
+					<input name="ck1" type="radio" value="bar" ><span >Option 1
 					</span>
 				</label>
 				<label class="e_chb">
-					<input id="ck2" name="ck1" type="radio" value="bar2" ><span class="custom-control-label">Option 2
+					<input name="ck1" type="radio" value="bar2" ><span >Option 2
 					</span>
 				</label>
 				<label class="e_chb">
-					<input id="ck3" name="ck1" type="radio" value="bar3" required="" ><span class="custom-control-label">Option 3</span>
+					<input name="ck1" type="radio" value="bar3" required="" ><span >Option 3</span>
 				</label>
-				<div id="error-container1"></div>
-			</div>
 		</div>
 	</div>
 	<div class="fd">
 		<label class="k">Max check</label>
-		<div class="col-sm-6">
-			<div class="custom-controls-stacked">
-				<label class="e_chb">
-					<input type="checkbox" value="bar" id="e1" ><span class="custom-control-label">Option 1</span>
+		<div class="v">
+			<label class="e_chb">
+					<input type="checkbox" value="bar" ><span >Option 1</span>
 				</label>
 				<label class="e_chb">
-					<input type="checkbox" value="bar" id="e2" ><span class="custom-control-label">Option 2</span>
+					<input type="checkbox" value="bar" ><span >Option 2</span>
 				</label>
 				<label class="e_chb">
-					<input type="checkbox" value="bar" id="e3"  ><span class="custom-control-label">Option 3</span>
+					<input type="checkbox" value="bar"  ><span >Option 3</span>
 				</label>
-				<div id="error-container2"></div>
-			</div>
 		</div>
 	</div>
 	<div class="fd">
 		<label class="k">E-Mail</label>
 		<div class="v">
-			<input type="email" required="" parsley-type="email" placeholder="Enter a valid e-mail">
+			<input type="email" required="" placeholder="Enter a valid e-mail">
 		</div>
 	</div>
 	<div class="fd">
 		<label class="k">URL</label>
 		<div class="v">
-			<input parsley-type="url" type="url" required="" placeholder="URL">
+			<input type="url" required="" placeholder="URL">
 		</div>
 	</div>
 	<div class="fd">
 		<label class="k">Digits</label>
 		<div class="v">
-			<input  type="text" required="" placeholder="Enter only digits">
+			<input type="text" required="" placeholder="Enter only digits">
 		</div>
 	</div>
 	<div class="fd">
 		<label class="k">Number</label>
 		<div class="v">
-			<input  type="text" required="" placeholder="Enter only numbers">
+			<input type="text" required="" placeholder="Enter only numbers">
 		</div>
 	</div>
 	<div class="fd">
 		<label class="k">Alphanumeric</label>
 		<div class="v">
-			<input  type="text" required="" placeholder="Enter alphanumeric value">
+			<input type="text" required="" placeholder="Enter alphanumeric value">
 		</div>
 	</div>
 	<div class="fd">
