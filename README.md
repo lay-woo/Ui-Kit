@@ -1,4 +1,4 @@
-# Ui-Kit
+# Ourway Ui Kit
 <p>Ui Kit will build same base Javascript & HTML & CSS Template</p>
 
 <a href="https://lay-woo.github.io/Ui-Kit/ui.html" target="_blank" >Demo</a>
